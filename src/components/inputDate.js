@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-const InputTime = ({ date, setDate }) => {
+const InputDate = ({ date, setDate }) => {
   // console.log(moment().format("YYYY-MM-DD"));
   return (
     <>
@@ -12,8 +12,7 @@ const InputTime = ({ date, setDate }) => {
         onChange={({ target }) => setDate(target.value)}
         min={moment().format("YYYY-MM-DD")}
       />
-      <span>{date}</span>
     </>
   );
 };
-export default InputTime;
+export default InputDate;
