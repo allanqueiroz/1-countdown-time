@@ -5,23 +5,27 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import ShowTimerTo from "./showTimerTo";
 
 const ShowEvents = ({ listEvents }) => {
-  //   console.log(moment("2021-11-22").fromNow());
-  //   console.log(new Date("2021-08-05 12:00:00").getTime());
+  const handleDelete = (id) => {
+    alert(`deletou o evento, cujo o id é ${id}`);
+  };
   return (
-    <div>
+    <div className="show-events">
       <h2>MEUS EVENTOS</h2>
       <ul>
         {listEvents.map((item) => (
-          <li key={item.eName}>
-            <span>
-              {item.eName} - {moment(item.date).format("LL")}
-            </span>
-            -
+          <li key={item.id}>
+            <div className="name-date-components">
+              <span>
+                {item.eName} - {moment(item.date).format("LL")}
+              </span>
+              <button
+                className="btn-delete"
+                onClick={() => handleDelete(item.id)}
+              >
+                <FaRegTrashAlt size={17} />
+              </button>
+            </div>
             <ShowTimerTo date={item.date} />
-            -----
-            <button>
-              <FaRegTrashAlt size={17} />
-            </button>
           </li>
         ))}
       </ul>

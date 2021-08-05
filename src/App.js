@@ -14,10 +14,10 @@ function App() {
     if (!eventName) alert("Set a name for the event");
     else if (!date) alert("Set a date for the event");
     else {
-      // console.log(`${date}${eventName} - ${eventName}${date}`);
       setListEvents([
         ...listEvents,
         {
+          id: `${eventName.slice(0, 5).trim()}${date}`,
           eName: eventName,
           date: date,
         },
@@ -29,10 +29,12 @@ function App() {
   return (
     <div className="container">
       <h1>COUNTDOWN</h1>
-      <InputEvent eventName={eventName} setEventName={setEventName} />
-      <InputDate date={date} setDate={setDate} />
-      <BtnModel name="Add event" className="btn-event" funcClick={addEvent} />
-      <ShowEvents listEvents={listEvents} />
+      <div className="event-and-date">
+        <InputEvent eventName={eventName} setEventName={setEventName} />
+        <InputDate date={date} setDate={setDate} />
+      </div>
+      <BtnModel name="ADD EVENT" clas="btn-event" funcClick={addEvent} />
+      {listEvents.length ? <ShowEvents listEvents={listEvents} /> : null}
     </div>
   );
 }

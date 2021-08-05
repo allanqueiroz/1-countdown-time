@@ -22,12 +22,12 @@ const ShowTimerTo = ({ date }) => {
 
     // if (distance < 0) {
     //   clearInterval(s);
-    //   alert("Expirou o tempo");
+    //   alert("O tempo até o evento expirou!");
     // }
   });
   return (
     <>
-      <span>{` ${days} dias ${hours}h ${minutes}m ${seconds}s `}</span>
+      <span className="lm">{`${days} dias ${hours}h ${minutes}m ${seconds}s`}</span>
     </>
   );
 };
