@@ -11,7 +11,7 @@ const InputDate = ({ date, setDate }) => {
         type="date"
         value={date}
         onChange={({ target }) => setDate(target.value)}
-        min={moment().format("YYYY-MM-DD")}
+        min={moment("2021-08-06").add(1, "day").format("YYYY-MM-DD")}
       />
     </div>
   );

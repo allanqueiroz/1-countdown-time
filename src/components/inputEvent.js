@@ -3,11 +3,11 @@ import React from "react";
 const InputEvent = ({ eventName, setEventName }) => {
   return (
     <div className="cFlex1">
-      <label>Countdown title</label>
+      <label>Countdown Event</label>
       <br />
       <input
         type="text"
-        placeholder="Event Name"
+        placeholder="name the event"
         value={eventName}
         onChange={({ target }) => setEventName(target.value)}
       />

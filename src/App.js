@@ -34,7 +34,9 @@ function App() {
         <InputDate date={date} setDate={setDate} />
       </div>
       <BtnModel name="ADD EVENT" clas="btn-event" funcClick={addEvent} />
-      {listEvents.length ? <ShowEvents listEvents={listEvents} /> : null}
+      {listEvents.length ? (
+        <ShowEvents listEvents={listEvents} setListEvents={setListEvents} />
+      ) : null}
     </div>
   );
 }

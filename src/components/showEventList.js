@@ -4,9 +4,10 @@ import "moment/locale/pt-br";
 import { FaRegTrashAlt } from "react-icons/fa";
 import ShowTimerTo from "./showTimerTo";
 
-const ShowEvents = ({ listEvents }) => {
+const ShowEvents = ({ listEvents, setListEvents }) => {
   const handleDelete = (id) => {
-    alert(`deletou o evento, cujo o id é ${id}`);
+    setListEvents(listEvents.filter((item) => item.id !== id));
+    // alert(`deletou o evento, cujo o id é ${id}`);
   };
   return (
     <div className="show-events">
